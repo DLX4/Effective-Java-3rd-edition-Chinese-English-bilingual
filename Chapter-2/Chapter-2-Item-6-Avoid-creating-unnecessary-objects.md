@@ -36,7 +36,7 @@ In addition to reusing immutable objects, you can also reuse mutable objects if 
 
 Some object creations are much more expensive than others. If you’re going to need such an “expensive object” repeatedly, it may be advisable（adj.明智的，适当的） to cache it for reuse. Unfortunately, it’s not always obvious when you’re creating such an object. 
 
-**昂贵的对象**
+**昂贵的对象需要reuse**
 
 Suppose you want to write a method to determine（v.下决心；vt.确定） whether a string is a valid Roman numeral. Here’s the easiest way to do this using a regular expression:
 
