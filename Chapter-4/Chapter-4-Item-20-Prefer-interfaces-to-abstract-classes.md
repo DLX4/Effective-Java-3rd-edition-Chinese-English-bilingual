@@ -130,11 +130,11 @@ static List<Integer> intArrayAsList(int[] a) {
 }
 ```
 
+**这个例子真是骚操作。**
+
 When you consider all that a List implementation does for you, this example is an impressive demonstration of the power of skeletal implementations.
 
  Incidentally（顺便说一句）, this example is an **Adapter** [Gamma95] that allows an int array to be viewed as a list of Integer instances. Because of all the translation back and forth between int values and Integer instances (boxing and unboxing), its performance is not terribly good. Note that the implementation takes the form of an anonymous class (Item 24).
-
-
 
 The beauty of skeletal implementation classes is that they provide all of the implementation assistance of abstract classes without imposing the severe constraints that abstract classes impose when they serve as type definitions. 
 
