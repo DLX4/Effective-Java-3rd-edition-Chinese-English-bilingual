@@ -4,7 +4,7 @@
 
 An immutable class is simply a class whose instances cannot be modified. All of the information contained in each instance is fixed for the lifetime of the object,so no changes can ever be observed. The Java platform libraries contain many immutable classes, including String, the boxed primitive classes, and BigInteger and BigDecimal. There are many good reasons for this:Immutable classes are easier to design, implement, and use than mutable classes.They are less prone to error and are more secure.
 
-不可变类就是一个实例不能被修改的类。每个实例中包含的所有信息在对象的生命周期内都是固定的，因此永远不会观察到任何更改。Java 库包含许多不可变的类，包括 String、基本类型的包装类、BigInteger 和 BigDecimal。这么做有很好的理由：不可变类比可变类更容易设计、实现和使用。它们不太容易出错，而且更安全。
+**不可变类就是一个实例不能被修改的类。每个实例中包含的所有信息在对象的生命周期内都是固定的，因此永远不会观察到任何更改。Java 库包含许多不可变的类，包括 String、基本类型的包装类、BigInteger 和 BigDecimal。这么做有很好的理由：不可变类比可变类更容易设计、实现和使用。它们不太容易出错，而且更安全。**
 
 To make a class immutable, follow these five rules:
 
@@ -12,27 +12,19 @@ To make a class immutable, follow these five rules:
 
 1. **Don’t provide methods that modify the object’s state** (known as mutators).
 
-**不要提供修改对象状态的方法**（也被称为调整器）
-
-2. **Ensure that the class can’t be extended.** This prevents careless or malicious subclasses from compromising the immutable behavior of the class by behaving as if the object’s state has changed. Preventing subclassing is generally accomplished by making the class final, but there is an alternative that we’ll discuss later.
-
-**确保类不能被扩展。** 这可以防止无意或恶意的子类以其对象状态可改变的方式，而损害超类的不可变行为。防止子类化通常可使类成为 final 来完成，但是还有一种替代方法，我们将在后面讨论。
+2. **Ensure that the class can’t be extended.** This prevents careless or malicious（恶意的） subclasses from compromising（妥协） the immutable behavior of the class by behaving as if the object’s state has changed. Preventing subclassing is generally accomplished by making the class final, but there is an alternative that we’ll discuss later.
 
 3. **Make all fields final.** This clearly expresses your intent in a manner that is enforced by the system. Also, it is necessary to ensure correct behavior if a reference to a newly created instance is passed from one thread to another without synchronization, as spelled out in the memory model [JLS, 17.5;Goetz06, 16].
 
-**所有字段用 final 修饰。** 这清楚地表达了意图，并由系统强制执行。同样，如果在没有同步的情况下，引用新创建的实例并从一个线程传递到另一个线程，那么就有必要确保正确的行为，就像内存模型中描述的那样 [JLS, 17.5;Goetz06, 16]。
-
-4. **Make all fields private.** This prevents clients from obtaining access to mutable objects referred to by fields and modifying these objects directly.While it is technically permissible for immutable classes to have public final fields containing primitive values or references to immutable objects, it is not recommended because it precludes changing the internal representation in a later release (Items 15 and 16).
-
-**所有字段设为私有。** 这将阻止客户端访问字段引用的可变对象并直接修改这些对象。虽然在技术上允许不可变类拥有包含基本类型或对不可变对象的引用的公共 final 字段，但不建议这样做，因为在以后的版本中无法更改内部表示（[Item-15](https://github.com/clxering/Effective-Java-3rd-edition-Chinese-English-bilingual/blob/master/Chapter-4/Chapter-4-Item-15-Minimize-the-accessibility-of-classes-and-members.md) 和 [Item-16](https://github.com/clxering/Effective-Java-3rd-edition-Chinese-English-bilingual/blob/master/Chapter-4/Chapter-4-Item-16-In-public-classes-use-accessor-methods-not-public-fields.md)）。
+4. **Make all fields private.** This prevents clients from obtaining access to mutable objects referred to by fields and modifying these objects directly.While it is technically permissible （允许的）for immutable classes to have public final fields containing primitive values or references to immutable objects, it is not recommended because it precludes（排除） changing the internal representation in a later release (Items 15 and 16).
 
 5. **Ensure exclusive access to any mutable components.** If your class has any fields that refer to mutable objects, ensure that clients of the class cannot obtain references to these objects. Never initialize such a field to a client provided object reference or return the field from an accessor. Make defensive copies (Item 50) in constructors, accessors, and readObject methods (Item 88).
 
-**确保对任何可变组件的独占访问。** 如果你的类有任何引用可变对象的字段，请确保该类的客户端无法获得对这些对象的引用。永远不要向提供对象引用的客户端初始化这样的字段，也不要从访问器返回字段。在构造函数、访问器和 readObject 方法（[Item-88](https://github.com/clxering/Effective-Java-3rd-edition-Chinese-English-bilingual/blob/master/Chapter-12/Chapter-12-Item-88-Write-readObject-methods-defensively.md)）中创建防御性副本（[Item-50](https://github.com/clxering/Effective-Java-3rd-edition-Chinese-English-bilingual/blob/master/Chapter-8/Chapter-8-Item-50-Make-defensive-copies-when-needed.md)）。
+   **创建防御性副本**
 
 Many of the example classes in previous items are immutable. One such class is PhoneNumber in Item 11, which has accessors for each attribute but no corresponding mutators. Here is a slightly more complex example:
 
-前面提到的条目中的许多示例类都是不可变的。其中一个类是 [Item-11](https://github.com/clxering/Effective-Java-3rd-edition-Chinese-English-bilingual/blob/master/Chapter-3/Chapter-3-Item-11-Always-override-hashCode-when-you-override-equals.md) 中的 PhoneNumber，它对每个属性都有访问器，但没有相应的赋值方法。下面是一个稍微复杂一点的例子：
+**一个复杂的例子**
 
 ```
 // Immutable complex number class
@@ -81,7 +73,19 @@ public final class Complex {
 }
 ```
 
-This class represents a complex number (a number with both real and imaginary parts). In addition to the standard Object methods, it provides accessors for the real and imaginary parts and provides the four basic arithmetic operations: addition, subtraction, multiplication, and division. Notice how the arithmetic operations create and return a new Complex instance rather than modifying this instance. This pattern is known as the functional approach because methods return the result of applying a function to their operand, without modifying it. Contrast it to the procedural or imperative approach in which methods apply a procedure to their operand, causing its state to change.Note that the method names are prepositions (such as plus) rather than verbs (such as add). This emphasizes the fact that methods don’t change the values of the objects. The BigInteger and BigDecimal classes did not obey this naming convention, and it led to many usage errors.
+This class represents a complex number (a number with both real and imaginary parts). In addition to the standard Object methods, it provides accessors for the real and imaginary parts and provides the four basic arithmetic operations: addition, subtraction, multiplication, and division. 
+
+Notice how the arithmetic operations create and return a new Complex instance rather than modifying this instance. 
+
+**This pattern is known as the functional approach because methods return the result of applying a function to their operand, without modifying it**. 
+
+**函数式**
+
+Contrast it to the procedural or imperative approach in which methods apply a procedure to their operand, causing its state to change.
+
+Note that the method names are prepositions (such as plus) rather than verbs (such as add). This emphasizes the fact that methods don’t change the values of the objects. The BigInteger and BigDecimal classes did not obey this naming convention, and it led to many usage errors.
+
+**方法名是介词而不是动词，强调了这个对象的值不会改变。**
 
 这个类表示一个复数（一个包含实部和虚部的数）。除了标准的 Object 方法之外，它还为实部和虚部提供访问器，并提供四种基本的算术运算：加法、减法、乘法和除法。需要注意的是，算术操作如何创建和返回一个新的 Complex 实例，而不是修改这个实例。这种模式称为泛函方法，因为方法返回对其操作数应用函数为结果，而不修改它。将其与方法将过程应用于其操作数的过程或命令式方法进行对比，使其状态发生变化。注意，方法名是介词（如 plus)，而不是动词（如 add)。这强调了一个事实：方法不会改变对象的值。BigInteger 和 BigDecimal 类不遵守这个命名约定，导致了许多使用错误。
 
