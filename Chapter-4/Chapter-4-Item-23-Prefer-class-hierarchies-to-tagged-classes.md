@@ -124,6 +124,6 @@ Note that the fields in the above hierarchy are accessed directly rather than by
 In summary, tagged classes are seldom appropriate. If you’re tempted to write a class with an explicit tag field, think about whether the tag could be eliminated and the class replaced by a hierarchy. When you encounter an existing class with a tag field, consider refactoring it into a hierarchy.
 
 ---
-**[Back to contents of the chapter（返回章节目录）](https://github.com/clxering/Effective-Java-3rd-edition-Chinese-English-bilingual/blob/master/Chapter-4/Chapter-4-Introduction.md)**
-- **Previous Item（上一条目）：[Item 22: Use interfaces only to define types（接口只用于定义类型）](https://github.com/clxering/Effective-Java-3rd-edition-Chinese-English-bilingual/blob/master/Chapter-4/Chapter-4-Item-22-Use-interfaces-only-to-define-types.md)**
-- **Next Item（下一条目）：[Item 24: Favor static member classes over nonstatic（静态成员类优于非静态成员类）](https://github.com/clxering/Effective-Java-3rd-edition-Chinese-English-bilingual/blob/master/Chapter-4/Chapter-4-Item-24-Favor-static-member-classes-over-nonstatic.md)**
+**[Back to contents of the chapter（返回章节目录）](../Chapter-4/Chapter-4-Introduction.md)**
+- **Previous Item（上一条目）：[Item 22: Use interfaces only to define types（接口只用于定义类型）](../Chapter-4/Chapter-4-Item-22-Use-interfaces-only-to-define-types.md)**
+- **Next Item（下一条目）：[Item 24: Favor static member classes over nonstatic（静态成员类优于非静态成员类）](../Chapter-4/Chapter-4-Item-24-Favor-static-member-classes-over-nonstatic.md)**

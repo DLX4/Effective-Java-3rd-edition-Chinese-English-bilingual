@@ -79,6 +79,6 @@ The lesson is clear: Never put multiple top-level classes or interfaces in a sin
 **教训很清楚：永远不要将多个顶层类或接口放在一个源文件中。遵循此规则可以确保在编译时单个类不能拥有多个定义。这反过来保证了编译所生成的类文件，以及程序的行为，是独立于源代码文件传递给编译器的顺序的。**
 
 ---
-**[Back to contents of the chapter（返回章节目录）](https://github.com/clxering/Effective-Java-3rd-edition-Chinese-English-bilingual/blob/master/Chapter-4/Chapter-4-Introduction.md)**
-- **Previous Item（上一条目）：[Item 24: Favor static member classes over nonstatic（静态成员类优于非静态成员类）](https://github.com/clxering/Effective-Java-3rd-edition-Chinese-English-bilingual/blob/master/Chapter-4/Chapter-4-Item-24-Favor-static-member-classes-over-nonstatic.md)**
-- **Next Item（下一条目）：[Chapter 5 Introduction（章节介绍）](https://github.com/clxering/Effective-Java-3rd-edition-Chinese-English-bilingual/blob/master/Chapter-5/Chapter-5-Introduction.md)**
+**[Back to contents of the chapter（返回章节目录）](../Chapter-4/Chapter-4-Introduction.md)**
+- **Previous Item（上一条目）：[Item 24: Favor static member classes over nonstatic（静态成员类优于非静态成员类）](../Chapter-4/Chapter-4-Item-24-Favor-static-member-classes-over-nonstatic.md)**
+- **Next Item（下一条目）：[Chapter 5 Introduction（章节介绍）](../Chapter-5/Chapter-5-Introduction.md)**

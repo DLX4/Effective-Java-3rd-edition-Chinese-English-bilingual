@@ -89,7 +89,7 @@ Now we’re in trouble. We’ve stored a `List<Integer>` instance into an array 
 
 In line 5, we retrieve the sole element from the sole list in this array. The compiler automatically casts the retrieved element to String, but it’s an Integer, so we get a ClassCastException at runtime. 
 
-**第5步本来是没错的，人家是老老实实的泛型代码，结果给整报错了。**
+**第五步本来是没错的，人家是老老实实的泛型代码，结果给整报错了。**
 
 In order to prevent this from happening, line 1 (which creates a generic array) must generate a compile-time error.
 
@@ -221,6 +221,7 @@ public class Chooser<T> {
 **In summary, arrays and generics have very different type rules. Arrays are covariant and reified; generics are invariant and erased. As a consequence, arrays provide runtime type safety but not compile-time type safety, and vice versa for generics. As a rule, arrays and generics don’t mix well. If you find yourself mixing them and getting compile-time errors or warnings, your first impulse should be to replace the arrays with lists.**
 
 ---
-**[Back to contents of the chapter（返回章节目录）](https://github.com/clxering/Effective-Java-3rd-edition-Chinese-English-bilingual/blob/master/Chapter-5/Chapter-5-Introduction.md)**
-- **Previous Item（上一条目）：[Item 27: Eliminate unchecked warnings（消除 unchecked 警告）](https://github.com/clxering/Effective-Java-3rd-edition-Chinese-English-bilingual/blob/master/Chapter-5/Chapter-5-Item-27-Eliminate-unchecked-warnings.md)**
-- **Next Item（下一条目）：[Item 29: Favor generic types（优先使用泛型）](https://github.com/clxering/Effective-Java-3rd-edition-Chinese-English-bilingual/blob/master/Chapter-5/Chapter-5-Item-29-Favor-generic-types.md)**
+**[Back to contents of the chapter（返回章节目录）](../Chapter-5/Chapter-5-Introduction.md)**
+- **Previous Item（上一条目）：[Item 27: Eliminate unchecked warnings（消除 unchecked 警告）](../Chapter-5/Chapter-5-Item-27-Eliminate-unchecked-warnings.md)**
+- **Next Item（下一条目）：[Item 29: Favor generic types（优先使用泛型）](../Chapter-5/Chapter-5-Item-29-Favor-generic-types.md)**
+

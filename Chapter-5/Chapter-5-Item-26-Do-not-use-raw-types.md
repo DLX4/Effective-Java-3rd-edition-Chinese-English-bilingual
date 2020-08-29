@@ -272,5 +272,5 @@ For quick reference, the terms introduced in this item (and a few introduced lat
 |   Type token  |     `String.class`    |   [Item-33](../Chapter-5/Chapter-5-Item-33-Consider-typesafe-heterogeneous-containers.md)   |
 
 ---
-**[Back to contents of the chapter（返回章节目录）](https://github.com/clxering/Effective-Java-3rd-edition-Chinese-English-bilingual/blob/master/Chapter-5/Chapter-5-Introduction.md)**
-- **Next Item（下一条目）：[Item 27: Eliminate unchecked warnings（消除 unchecked 警告）](https://github.com/clxering/Effective-Java-3rd-edition-Chinese-English-bilingual/blob/master/Chapter-5/Chapter-5-Item-27-Eliminate-unchecked-warnings.md)**
+**[Back to contents of the chapter（返回章节目录）](../Chapter-5/Chapter-5-Introduction.md)**
+- **Next Item（下一条目）：[Item 27: Eliminate unchecked warnings（消除 unchecked 警告）](../Chapter-5/Chapter-5-Item-27-Eliminate-unchecked-warnings.md)**
