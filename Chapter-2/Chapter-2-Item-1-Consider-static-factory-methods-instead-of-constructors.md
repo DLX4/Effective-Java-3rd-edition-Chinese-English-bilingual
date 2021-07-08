@@ -43,7 +43,7 @@ Because they have names, static factory methods don’t share the restriction di
 
 **This allows immutable classes (Item 17) to use preconstructed instances, or to cache instances as they’re constructed, and dispense them repeatedly to avoid creating unnecessary duplicate objects.** The Boolean.valueOf(boolean) method illustrates this technique: it never creates an object. This technique is similar to the **Flyweight pattern [Gamma95]**. It can greatly improve performance if equivalent objects are requested often, especially if they are expensive to create.
 
-> 静态工厂方法与构造函数相比的第二个优点，静态工厂方法不需要在每次调用时创建新对象。 这允许不可变类（[Item-17](https://github.com/clxering/Effective-Java-3rd-edition-Chinese-English-bilingual/blob/master/Chapter-4/Chapter-4-Item-17-Minimize-mutability.md)）使用预先构造的实例，或在构造实例时缓存实例，并重复分配它们以避免创建不必要的重复对象。`Boolean.valueOf(boolean)` 方法说明了这种技术：它从不创建对象。这种技术类似于享元模式 [Gamma95]。如果经常请求相同的对象，特别是在创建对象的代价很高时，它可以极大地提高性能。
+> 静态工厂方法与构造函数相比的第二个优点，静态工厂方法不需要在每次调用时创建新对象。 这允许不可变类（[Item-17](../Chapter-4/Chapter-4-Item-17-Minimize-mutability.md)）使用预先构造的实例，或在构造实例时缓存实例，并重复分配它们以避免创建不必要的重复对象。`Boolean.valueOf(boolean)` 方法说明了这种技术：它从不创建对象。这种技术类似于享元模式 [Gamma95]。如果经常请求相同的对象，特别是在创建对象的代价很高时，它可以极大地提高性能。
 
 The ability of static factory methods to return the same object from repeated invocations allows classes to maintain strict control over what instances exist at any time. 
 
@@ -53,7 +53,7 @@ There are several reasons to write instance-controlled classes. Instance control
 
 Also,it allows an immutable value class (Item 17) to make the guarantee that no two equal instances exist: **a.equals(b) if and only if a == b. This is the basis of the Flyweight pattern [Gamma95]. Enum types (Item 34) provide this guarantee.**
 
-> 静态工厂方法在重复调用中能够返回相同对象，这样的能力允许类在任何时候都能严格控制存在的实例。这样做的类被称为实例受控的类。编写实例受控的类有几个原因。实例控制允许一个类来保证它是一个单例（[Item-3](https://github.com/clxering/Effective-Java-3rd-edition-Chinese-English-bilingual/blob/master/Chapter-2/Chapter-2-Item-3-Enforce-the-singleton-property-with-a-private-constructor-or-an-enum-type.md)）或不可实例化的（[Item-4](https://github.com/clxering/Effective-Java-3rd-edition-Chinese-English-bilingual/blob/master/Chapter-2/Chapter-2-Item-4-Enforce-noninstantiability-with-a-private-constructor.md)）。同时，它允许一个不可变的值类（[Item-17](https://github.com/clxering/Effective-Java-3rd-edition-Chinese-English-bilingual/blob/master/Chapter-4/Chapter-4-Item-17-Minimize-mutability.md)）保证不存在两个相同的实例：`a.equals(b)` 当且仅当 `a==b`。这是享元模式的基础 [Gamma95]。枚举类型（[Item-34](https://github.com/clxering/Effective-Java-3rd-edition-Chinese-English-bilingual/blob/master/Chapter-6/Chapter-6-Item-34-Use-enums-instead-of-int-constants.md)）提供了这种保证。
+> 静态工厂方法在重复调用中能够返回相同对象，这样的能力允许类在任何时候都能严格控制存在的实例。这样做的类被称为实例受控的类。编写实例受控的类有几个原因。实例控制允许一个类来保证它是一个单例（[Item-3](../Chapter-2/Chapter-2-Item-3-Enforce-the-singleton-property-with-a-private-constructor-or-an-enum-type.md)）或不可实例化的（[Item-4](../Chapter-2/Chapter-2-Item-4-Enforce-noninstantiability-with-a-private-constructor.md)）。同时，它允许一个不可变的值类（[Item-17](../Chapter-4/Chapter-4-Item-17-Minimize-mutability.md)）保证不存在两个相同的实例：`a.equals(b)` 当且仅当 `a==b`。这是享元模式的基础 [Gamma95]。枚举类型（[Item-34](../Chapter-6/Chapter-6-Item-34-Use-enums-instead-of-int-constants.md)）提供了这种保证。
 >
 
 **译注：原文 noninstantiable 应修改为 non-instantiable ，译为「不可实例化的」**
@@ -68,7 +68,7 @@ One application of this flexibility（n.灵活性，弹性，适应性） is tha
 
 This technique lends itself to interface-based frameworks (Item 20), where interfaces provide natural return types for static factory methods.
 
-> 这种灵活性的一个应用是 API 可以在不公开其类的情况下返回对象。以这种方式隐藏实现类会形成一个非常紧凑的 API。这种技术适用于基于接口的框架（[Item-20](https://github.com/clxering/Effective-Java-3rd-edition-Chinese-English-bilingual/blob/master/Chapter-4/Chapter-4-Item-20-Prefer-interfaces-to-abstract-classes.md)），其中接口为静态工厂方法提供了自然的返回类型。
+> 这种灵活性的一个应用是 API 可以在不公开其类的情况下返回对象。以这种方式隐藏实现类会形成一个非常紧凑的 API。这种技术适用于基于接口的框架（[Item-20](../Chapter-4/Chapter-4-Item-20-Prefer-interfaces-to-abstract-classes.md)），其中接口为静态工厂方法提供了自然的返回类型。
 >
 
 **Prior to Java 8, interfaces couldn’t have static methods.** 
@@ -77,7 +77,7 @@ This technique lends itself to interface-based frameworks (Item 20), where inter
 
 For example, the Java Collections Framework has forty-five utility implementations of its interfaces, providing unmodifiable collections, synchronized collections, and the like. Nearly all of these implementations are exported via static factory methods in one noninstantiable class (java.util.Collections). The classes of the returned objects are all nonpublic.
 
-> 在 Java 8 之前，接口不能有静态方法。按照惯例，一个名为 Type 的接口的静态工厂方法被放在一个名为 Types 的不可实例化的伴随类（[Item-4](https://github.com/clxering/Effective-Java-3rd-edition-Chinese-English-bilingual/blob/master/Chapter-2/Chapter-2-Item-4-Enforce-noninstantiability-with-a-private-constructor.md)）中。例如，Java 的 Collections 框架有 45 个接口实用工具实现，提供了不可修改的集合、同步集合等。几乎所有这些实现都是通过一个非实例化类（`java.util.Collections`）中的静态工厂方法导出的。返回对象的类都是非公共的。
+> 在 Java 8 之前，接口不能有静态方法。按照惯例，一个名为 Type 的接口的静态工厂方法被放在一个名为 Types 的不可实例化的伴随类（[Item-4](../Chapter-2/Chapter-2-Item-4-Enforce-noninstantiability-with-a-private-constructor.md)）中。例如，Java 的 Collections 框架有 45 个接口实用工具实现，提供了不可修改的集合、同步集合等。几乎所有这些实现都是通过一个非实例化类（`java.util.Collections`）中的静态工厂方法导出的。返回对象的类都是非公共的。
 >
 
 > **译注：原文 noninstantiable 应修改为 non-instantiable ，译为「不可实例化的」**
@@ -138,17 +138,17 @@ The service access API may allow clients to specify criteria for choosing an imp
 
 An optional fourth component of a service provider framework is a **service provider interface**, which describes a factory object that produce instances of the service interface. In the absence of a service provider interface, implementations must be instantiated reflectively (Item 65). **In the case of JDBC, Connection plays the part of the service interface, DriverManager.registerDriver is the provider registration API, DriverManager.getConnection is the service access API, and Driver is the service provider interface.**
 
-> 服务提供者框架的第四个可选组件是服务提供者接口，它描述了产生服务接口实例的工厂对象。在没有服务提供者接口的情况下，必须以反射的方式实例化实现（[Item-65](https://github.com/clxering/Effective-Java-3rd-edition-Chinese-English-bilingual/blob/master/Chapter-9/Chapter-9-Item-65-Prefer-interfaces-to-reflection.md)）。在 JDBC 中，连接扮演服务接口 DriverManager 的角色。`DriverManager.registerDriver` 是提供商注册的 API，`DriverManager.getConnection` 是服务访问 API，驱动程序是服务提供者接口。
+> 服务提供者框架的第四个可选组件是服务提供者接口，它描述了产生服务接口实例的工厂对象。在没有服务提供者接口的情况下，必须以反射的方式实例化实现（[Item-65](../Chapter-9/Chapter-9-Item-65-Prefer-interfaces-to-reflection.md)）。在 JDBC 中，连接扮演服务接口 DriverManager 的角色。`DriverManager.registerDriver` 是提供商注册的 API，`DriverManager.getConnection` 是服务访问 API，驱动程序是服务提供者接口。
 >
 
 There are many variants of the service provider framework pattern. For example, the service access API can return a richer service interface to clients than the one furnished by providers. This is the **Bridge pattern** [Gamma95]. Dependency injection frameworks (Item 5) can be viewed as powerful service providers. Since Java 6, the platform includes a general-purpose service provider framework, java.util.ServiceLoader, so you needn’t, and generally shouldn’t, write your own (Item 59). JDBC doesn’t use ServiceLoader, as the former predates（vt.先于） the latter.
 
-> 服务提供者框架模式有许多变体。例如，服务访问 API 可以向客户端返回比提供者提供的更丰富的服务接口。这是桥接模式 [Gamma95]。依赖注入框架（[Item-5](https://github.com/clxering/Effective-Java-3rd-edition-Chinese-English-bilingual/blob/master/Chapter-2/Chapter-2-Item-5-Prefer-dependency-injection-to-hardwiring-resources.md)）可以看作是强大的服务提供者。由于是 Java 6，该平台包括一个通用服务提供者框架 `Java.util.ServiceLoader`，所以你不需要，通常也不应该自己写（[Item-59](https://github.com/clxering/Effective-Java-3rd-edition-Chinese-English-bilingual/blob/master/Chapter-9/Chapter-9-Item-59-Know-and-use-the-libraries.md)）。JDBC 不使用 ServiceLoader，因为前者比后者要早。
+> 服务提供者框架模式有许多变体。例如，服务访问 API 可以向客户端返回比提供者提供的更丰富的服务接口。这是桥接模式 [Gamma95]。依赖注入框架（[Item-5](../Chapter-2/Chapter-2-Item-5-Prefer-dependency-injection-to-hardwiring-resources.md)）可以看作是强大的服务提供者。由于是 Java 6，该平台包括一个通用服务提供者框架 `Java.util.ServiceLoader`，所以你不需要，通常也不应该自己写（[Item-59](../Chapter-9/Chapter-9-Item-59-Know-and-use-the-libraries.md)）。JDBC 不使用 ServiceLoader，因为前者比后者要早。
 >
 
 <u>**The main limitation of providing only static factory methods is that classes without public or protected constructors cannot be subclassed.**</u> For example, it is impossible to subclass any of the convenience implementation classes in the Collections Framework（此处有疑问，现在的集合框架中还是可以subclass ArrayList的，可能这里指的是按照这种方法改造之后的结果）. Arguably（可以说） this can be a blessing in disguise because it encourages programmers to use composition instead of inheritance (Item 18), and is required for immutable types (Item 17).
 
-> 仅提供静态工厂方法的主要局限是，没有公共或受保护构造函数的类不能被子类化。 例如，不可能在集合框架中子类化任何方便的实现类。这可能是一种因祸得福的做法，因为它鼓励程序员使用组合而不是继承（[Item-18](https://github.com/clxering/Effective-Java-3rd-edition-Chinese-English-bilingual/blob/master/Chapter-4/Chapter-4-Item-18-Favor-composition-over-inheritance.md)），并且对于不可变的类型（[Item-17](https://github.com/clxering/Effective-Java-3rd-edition-Chinese-English-bilingual/blob/master/Chapter-4/Chapter-4-Item-17-Minimize-mutability.md)）是必需的。
+> 仅提供静态工厂方法的主要局限是，没有公共或受保护构造函数的类不能被子类化。 例如，不可能在集合框架中子类化任何方便的实现类。这可能是一种因祸得福的做法，因为它鼓励程序员使用组合而不是继承（[Item-18](../Chapter-4/Chapter-4-Item-18-Favor-composition-over-inheritance.md)），并且对于不可变的类型（[Item-17](../Chapter-4/Chapter-4-Item-17-Minimize-mutability.md)）是必需的。
 
 <u>**A second shortcoming of static factory methods is that they are hard for programmers to find.**</u> They **do not stand out in API** documentation in the way that constructors do, so it can be difficult to figure out how to instantiate a class that provides static factory methods instead of constructors. The Javadoc tool may someday draw attention to static factory methods. In the meantime, you can reduce this problem by drawing attention to static factories in class or interface documentation and by adhering to common naming conventions. Here are some common names for static factory methods. This list is far from exhaustive:
 
@@ -232,5 +232,5 @@ List<Complaint> litany = Collections.list(legacyLitany);
 >
 
 ---
-**[Back to contents of the chapter（返回章节目录）](https://github.com/clxering/Effective-Java-3rd-edition-Chinese-English-bilingual/blob/master/Chapter-2/Chapter-2-Introduction.md)**
-- **Next Item（下一条目）：[Item 2: Consider a builder when faced with many constructor parameters（在面对多个构造函数参数时，请考虑构建器）](https://github.com/clxering/Effective-Java-3rd-edition-Chinese-English-bilingual/blob/master/Chapter-2/Chapter-2-Item-2-Consider-a-builder-when-faced-with-many-constructor-parameters.md)**
+**[Back to contents of the chapter（返回章节目录）](../Chapter-2/Chapter-2-Introduction.md)**
+- **Next Item（下一条目）：[Item 2: Consider a builder when faced with many constructor parameters（在面对多个构造函数参数时，请考虑构建器）](../Chapter-2/Chapter-2-Item-2-Consider-a-builder-when-faced-with-many-constructor-parameters.md)**

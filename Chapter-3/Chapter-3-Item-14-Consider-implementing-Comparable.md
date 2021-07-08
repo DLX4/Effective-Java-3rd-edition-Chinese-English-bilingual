@@ -228,6 +228,6 @@ In summary, whenever you implement a value class that has a sensible ordering, y
 **总之，无论何时实现具有排序性质的值类，都应该让类实现 Comparable 接口，这样就可以轻松地对实例进行排序、搜索，并与依赖于此接口的集合实现进行互操作。在 compareTo 方法的实现中比较字段值时，避免使用 < 和 > 操作符，应使用包装类中的静态比较方法或 Comparator 接口中的 comparator 构造方法。**
 
 ---
-**[Back to contents of the chapter（返回章节目录）](https://github.com/clxering/Effective-Java-3rd-edition-Chinese-English-bilingual/blob/master/Chapter-3/Chapter-3-Introduction.md)**
-- **Previous Item（上一条目）：[Item 13: Override clone judiciously（明智地覆盖 clone 方法）](https://github.com/clxering/Effective-Java-3rd-edition-Chinese-English-bilingual/blob/master/Chapter-3/Chapter-3-Item-13-Override-clone-judiciously.md)**
-- **Next Item（下一条目）：[Chapter 4 Introduction（章节介绍）](https://github.com/clxering/Effective-Java-3rd-edition-Chinese-English-bilingual/blob/master/Chapter-4/Chapter-4-Introduction.md)**
+**[Back to contents of the chapter（返回章节目录）](../Chapter-3/Chapter-3-Introduction.md)**
+- **Previous Item（上一条目）：[Item 13: Override clone judiciously（明智地覆盖 clone 方法）](../Chapter-3/Chapter-3-Item-13-Override-clone-judiciously.md)**
+- **Next Item（下一条目）：[Chapter 4 Introduction（章节介绍）](../Chapter-4/Chapter-4-Introduction.md)**

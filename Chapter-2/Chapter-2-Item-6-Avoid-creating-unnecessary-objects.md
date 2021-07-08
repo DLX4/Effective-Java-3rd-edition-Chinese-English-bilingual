@@ -112,6 +112,6 @@ The counterpoint （对立）to this item is Item 50 on defensive copying. The p
 **第50条defensive copying危害更大**
 
 ---
-**[Back to contents of the chapter（返回章节目录）](https://github.com/clxering/Effective-Java-3rd-edition-Chinese-English-bilingual/blob/master/Chapter-2/Chapter-2-Introduction.md)**
-- **Previous Item（上一条目）：[Item 5: Prefer dependency injection to hardwiring resources（依赖注入优于硬连接资源）](https://github.com/clxering/Effective-Java-3rd-edition-Chinese-English-bilingual/blob/master/Chapter-2/Chapter-2-Item-5-Prefer-dependency-injection-to-hardwiring-resources.md)**
-- **Next Item（下一条目）：[Item 7: Eliminate obsolete object references（排除过时的对象引用）](https://github.com/clxering/Effective-Java-3rd-edition-Chinese-English-bilingual/blob/master/Chapter-2/Chapter-2-Item-7-Eliminate-obsolete-object-references.md)**
+**[Back to contents of the chapter（返回章节目录）](../Chapter-2/Chapter-2-Introduction.md)**
+- **Previous Item（上一条目）：[Item 5: Prefer dependency injection to hardwiring resources（依赖注入优于硬连接资源）](../Chapter-2/Chapter-2-Item-5-Prefer-dependency-injection-to-hardwiring-resources.md)**
+- **Next Item（下一条目）：[Item 7: Eliminate obsolete object references（排除过时的对象引用）](../Chapter-2/Chapter-2-Item-7-Eliminate-obsolete-object-references.md)**

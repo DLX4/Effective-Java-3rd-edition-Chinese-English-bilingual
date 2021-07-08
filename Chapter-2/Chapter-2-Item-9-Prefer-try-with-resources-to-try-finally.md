@@ -134,6 +134,6 @@ The try-with-resources statement makes it easy to write correct code using resou
 **使用 try-finally 几乎是不可能写出正确的代码，推荐使用try-with-resources。**
 
 ---
-**[Back to contents of the chapter（返回章节目录）](https://github.com/clxering/Effective-Java-3rd-edition-Chinese-English-bilingual/blob/master/Chapter-2/Chapter-2-Introduction.md)**
-- **Previous Item（上一条目）：[Item 8: Avoid finalizers and cleaners（避免使用终结器和清除器）](https://github.com/clxering/Effective-Java-3rd-edition-Chinese-English-bilingual/blob/master/Chapter-2/Chapter-2-Item-8-Avoid-finalizers-and-cleaners.md)**
-- **Next Item（下一条目）：[Chapter 3 Introduction（章节介绍）](https://github.com/clxering/Effective-Java-3rd-edition-Chinese-English-bilingual/blob/master/Chapter-3/Chapter-3-Introduction.md)**
+**[Back to contents of the chapter（返回章节目录）](../Chapter-2/Chapter-2-Introduction.md)**
+- **Previous Item（上一条目）：[Item 8: Avoid finalizers and cleaners（避免使用终结器和清除器）](../Chapter-2/Chapter-2-Item-8-Avoid-finalizers-and-cleaners.md)**
+- **Next Item（下一条目）：[Chapter 3 Introduction（章节介绍）](../Chapter-3/Chapter-3-Introduction.md)**

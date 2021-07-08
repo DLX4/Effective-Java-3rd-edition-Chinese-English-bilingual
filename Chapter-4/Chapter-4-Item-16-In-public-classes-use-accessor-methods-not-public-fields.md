@@ -72,6 +72,6 @@ In summary, public classes should never expose mutable fields. It is less harmfu
 
 
 ---
-**[Back to contents of the chapter（返回章节目录）](https://github.com/clxering/Effective-Java-3rd-edition-Chinese-English-bilingual/blob/master/Chapter-4/Chapter-4-Introduction.md)**
-- **Previous Item（上一条目）：[Item 15: Minimize the accessibility of classes and members（尽量减少类和成员的可访问性）](https://github.com/clxering/Effective-Java-3rd-edition-Chinese-English-bilingual/blob/master/Chapter-4/Chapter-4-Item-15-Minimize-the-accessibility-of-classes-and-members.md)**
-- **Next Item（下一条目）：[Item 17: Minimize mutability（减少可变性）](https://github.com/clxering/Effective-Java-3rd-edition-Chinese-English-bilingual/blob/master/Chapter-4/Chapter-4-Item-17-Minimize-mutability.md)**
+**[Back to contents of the chapter（返回章节目录）](../Chapter-4/Chapter-4-Introduction.md)**
+- **Previous Item（上一条目）：[Item 15: Minimize the accessibility of classes and members（尽量减少类和成员的可访问性）](../Chapter-4/Chapter-4-Item-15-Minimize-the-accessibility-of-classes-and-members.md)**
+- **Next Item（下一条目）：[Item 17: Minimize mutability（减少可变性）](../Chapter-4/Chapter-4-Item-17-Minimize-mutability.md)**

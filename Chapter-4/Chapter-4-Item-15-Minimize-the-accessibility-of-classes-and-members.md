@@ -156,5 +156,5 @@ To summarize, you should reduce accessibility of program elements as much as pos
 除了public static final常量，public class不应该有public的field。
 
 ---
-**[Back to contents of the chapter（返回章节目录）](https://github.com/clxering/Effective-Java-3rd-edition-Chinese-English-bilingual/blob/master/Chapter-4/Chapter-4-Introduction.md)**
-- **Next Item（下一条目）：[Item 16: In public classes use accessor methods not public fields（在公共类中，使用访问器方法，而不是公共字段）](https://github.com/clxering/Effective-Java-3rd-edition-Chinese-English-bilingual/blob/master/Chapter-4/Chapter-4-Item-16-In-public-classes-use-accessor-methods-not-public-fields.md)**
+**[Back to contents of the chapter（返回章节目录）](../Chapter-4/Chapter-4-Introduction.md)**
+- **Next Item（下一条目）：[Item 16: In public classes use accessor methods not public fields（在公共类中，使用访问器方法，而不是公共字段）](../Chapter-4/Chapter-4-Item-16-In-public-classes-use-accessor-methods-not-public-fields.md)**
